@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CARE 2.0</title>
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- OBRIGATÓRIO: Biblioteca MQTT via CDN -->
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#aba-home" data-tab="home" aria-label="CARE - página inicial">
+      <img src="assets/care-logo.png" alt="CARE">
+    </a>
+    <nav class="tab-nav" aria-label="Navegação principal">
+      <button class="tab-btn active" data-tab="home" aria-current="page">Home</button>
+      <button class="tab-btn" data-tab="rotina">Rotina</button>
+      <button class="tab-btn" data-tab="comunicacao">Fala</button>
+      <button class="tab-btn" data-tab="historico">Histórico</button>
+    </nav>
+    <span id="net-status" class="connection-indicator status-connecting" role="status"
+      aria-label="Conectando ao broker"></span>
+  </div>
+</header>
+
+<div class="container">
+  <dialog id="alert-dialog" class="alert-dialog" aria-labelledby="alert-title" aria-describedby="alert-message">
+    <div class="alert-content">
+      <h2 id="alert-title">Alerta da FPGA</h2>
+      <p id="alert-message">
+        Botão <span id="alert-btn">-</span> acionado: <strong id="alert-word">---</strong>
+      </p>
+      <button id="alert-close" class="alert-close" type="button" aria-label="Fechar alerta">×</button>
+    </div>
+  </dialog>
+
+  <main>
+    <section id="aba-home" class="tab-content active">
+      <section class="home-intro">
+        <h1>Bem-vindo ao <span class="care-word" aria-label="CARE"><span class="care-letter care-blue">C</span><span class="care-letter care-yellow">A</span><span class="care-letter care-green">R</span><span class="care-letter care-red">E</span></span></h1>
+        <p class="home-lead">Um dispositivo inteligente 7 em 1 para apoiar a comunicação, a regulação emocional e a autonomia de crianças com Transtorno do Espectro Autista (TEA).</p>
+      </section>
+
+      <section class="home-section" aria-labelledby="modes-heading">
+        <div class="home-section-heading">
+          <h2 id="modes-heading">Conheça os modos de uso</h2>
+        </div>
+        <div class="mode-grid">
+          <article class="mode-card mode-crisis">
+            <span class="mode-icon" aria-hidden="true">🫁</span>
+            <div><h3>Crise</h3><p>Apoia a autorregulação com um guia visual e tátil de respiração: “inspire / expire”.</p></div>
+          </article>
+          <article class="mode-card mode-communication">
+            <span class="mode-icon" aria-hidden="true">💬</span>
+            <div><h3>Comunicação</h3><p>Ajuda a expressar necessidades como água, comida, banheiro, dor ou “pare”.</p></div>
+          </article>
+          <article class="mode-card mode-art">
+            <span class="mode-icon" aria-hidden="true">🎨</span>
+            <div><h3>Arte</h3><p>Incentiva a criatividade, a exploração sonora e visual e a expressão corporal.</p></div>
+          </article>
+          <article class="mode-card mode-game">
+            <span class="mode-icon" aria-hidden="true">🧠</span>
+            <div><h3>Jogo</h3><p>Propõe atividades de foco e memória com incentivo e reforço positivo.</p></div>
+          </article>
+          <article class="mode-card mode-routine">
+            <span class="mode-icon" aria-hidden="true">📅</span>
+            <div><h3>Rotina</h3><p>Ajuda a acompanhar tarefas diárias e oferece previsibilidade no cotidiano.</p></div>
+          </article>
+          <article class="mode-card mode-story">
+            <span class="mode-icon" aria-hidden="true">📖</span>
+            <div><h3>História</h3><p>Apresenta narrativas interativas com escolhas para explorar situações sociais.</p></div>
+          </article>
+          <article class="mode-card mode-history">
+            <span class="mode-icon" aria-hidden="true">📊</span>
+            <div><h3>Histórico</h3><p>Reúne métricas de uso dos modos e das palavras acionadas para consulta dos cuidadores.</p></div>
+          </article>
+        </div>
+      </section>
+
+    </section>
+
+  <!-- ABA: FALA -->
+  <section id="aba-comunicacao" class="tab-content">
+    <div class="card">
+      <h2>Palavras dos botões da FPGA</h2>
+      <table class="task-status-table">
+        <thead>
+          <tr>
+            <th scope="col">Botão</th>
+            <th scope="col">Palavra</th>
+            <th scope="col">Emergência</th>
+            <th scope="col">Ação</th>
+          </tr>
+        </thead>
+        <tbody id="button-config">
+          <tr><td colspan="4">Carregando configuração...</td></tr>
+        </tbody>
+      </table>
+      <div id="tx-log" class="log-message" role="status"></div>
+    </div>
+  </section>
+
+  <!-- ABA: ROTINA -->
+  <section id="aba-rotina" class="tab-content">
+    <div class="card">
+      <h2>Tarefas e status da FPGA</h2>
+      <table class="task-status-table">
+        <thead>
+          <tr>
+            <th scope="col">ID da tarefa</th>
+            <th scope="col">Tarefa</th>
+            <th scope="col">Status</th>
+            <th scope="col">Ação</th>
+          </tr>
+        </thead>
+        <tbody id="task-check">
+          <tr><td colspan="4">Carregando tarefas...</td></tr>
+        </tbody>
+      </table>
+      <div id="task-tx-log" class="log-message" role="status"></div>
+    </div>
+  </section>
+
+  <!-- ABA: HISTÓRICO -->
+  <section id="aba-historico" class="tab-content">
+    <div class="card">
+      <h2>Telemetria de Uso</h2>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <h3>Usos por Modo</h3>
+          <div id="hist-acessos" class="metric-value">Aguardando telemetria...</div>
+        </div>
+        <div class="metric-card">
+          <h3>Minutos por Modo</h3>
+          <div id="hist-tempo" class="metric-value">Aguardando telemetria...</div>
+        </div>
+        <div class="metric-card">
+          <h3>Usos por Palavra</h3>
+          <div id="hist-botoes" class="metric-value">Aguardando telemetria...</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>
+</div>
+
+<!-- ÚNICO PONTO DE ENTRADA DO JAVASCRIPT -->
+<script type="module" src="js/router.js?v=10"></script>
+
+</body>
+</html>
