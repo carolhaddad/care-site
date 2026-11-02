@@ -16,14 +16,21 @@
     <a class="brand" href="#aba-home" data-tab="home" aria-label="CARE - página inicial">
       <img src="assets/care-logo.png" alt="CARE">
     </a>
-    <nav class="tab-nav" aria-label="Navegação principal">
+    <span id="net-status" class="connection-indicator status-connecting" role="status"
+      aria-label="Conectando ao broker"></span>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="primary-navigation"
+      aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="primary-navigation" class="tab-nav" aria-label="Navegação principal">
       <button class="tab-btn active" data-tab="home" aria-current="page">Home</button>
       <button class="tab-btn" data-tab="rotina">Rotina</button>
       <button class="tab-btn" data-tab="comunicacao">Fala</button>
       <button class="tab-btn" data-tab="historico">Histórico</button>
     </nav>
-    <span id="net-status" class="connection-indicator status-connecting" role="status"
-      aria-label="Conectando ao broker"></span>
+    <button class="nav-backdrop" type="button" aria-label="Fechar menu" tabindex="-1"></button>
   </div>
 </header>
 
