@@ -488,6 +488,94 @@ button[type="submit"]:hover {
   min-width: 8rem !important;
 }
 
+.question-table {
+  table-layout: fixed;
+}
+
+.question-input {
+  width: 100%;
+  min-width: 0;
+}
+
+.game-card {
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-message {
+  position: relative;
+  display: grid;
+  flex: 1;
+  min-height: 260px;
+  place-items: center;
+  align-content: center;
+  gap: 4px;
+  padding: 28px;
+  color: var(--accent-color);
+  font-size: clamp(1.5rem, 4vw, 2.8rem);
+  font-weight: 700;
+  text-align: center;
+  white-space: pre-wrap;
+}
+
+.game-message > span {
+  display: block;
+}
+
+.game-colors {
+  display: flex;
+  width: min(100%, 760px);
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 14px;
+}
+
+.game-color {
+  display: grid;
+  width: clamp(48px, 9vw, 82px);
+  aspect-ratio: 1;
+  place-items: center;
+  border: 4px solid rgba(30, 41, 59, 0.18);
+  border-radius: 50%;
+  color: transparent;
+  box-shadow: 0 4px 10px rgba(30, 41, 59, 0.18);
+}
+
+.game-color-vermelho,
+.game-color-red { background-color: #d66b4b; }
+.game-color-amarelo,
+.game-color-yellow { background-color: #e2b93b; }
+.game-color-verde,
+.game-color-green { background-color: #648c68; }
+.game-color-azul,
+.game-color-blue { background-color: #5b9bd5; }
+.game-color-ciano,
+.game-color-cyan { background-color: #48b9b2; }
+.game-color-roxo,
+.game-color-purple { background-color: #8d6bb3; }
+.game-color-laranja,
+.game-color-orange { background-color: #e58b3a; }
+.game-color-lilas { background-color: #8d6bb3; }
+.game-color-branco,
+.game-color-white { background-color: #ffffff; }
+
+.game-question {
+  display: grid;
+  gap: 8px;
+  max-width: calc(100% - 130px);
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+.game-score {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  color: var(--primary-color);
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+}
+
 .task-action {
   background: var(--button-color);
   color: var(--button-text-color);
@@ -645,6 +733,44 @@ button[type="submit"]:hover {
   .card {
     padding: 18px;
     overflow-x: auto;
+  }
+
+  .question-table th,
+  .question-table td {
+    padding: 8px 4px;
+    overflow-wrap: anywhere;
+  }
+
+  .question-table th:first-child,
+  .question-table td:first-child {
+    width: 11%;
+  }
+
+  .question-table th:nth-child(2),
+  .question-table td:nth-child(2) {
+    width: 27%;
+  }
+
+  .question-table th:nth-child(3),
+  .question-table td:nth-child(3),
+  .question-table th:nth-child(4),
+  .question-table td:nth-child(4) {
+    width: 17%;
+  }
+
+  .question-table th:nth-child(5),
+  .question-table td:nth-child(5) {
+    width: 10%;
+  }
+
+  .question-table th:last-child,
+  .question-table td:last-child {
+    width: 18%;
+  }
+
+  .question-table .task-action {
+    padding: 7px 5px;
+    white-space: normal;
   }
 
   .container {

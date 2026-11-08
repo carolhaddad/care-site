@@ -1,6 +1,7 @@
 import { CONFIG } from './config.js?v=3';
 
 const topicoHandlers = {};
+const topicoTextoHandlers = {};
 
 export const client = mqtt.connect(CONFIG.BROKER_URL);
 
@@ -26,7 +27,8 @@ client.on('connect', () => {
   atualizarStatus('online', 'Conectado ao broker');
 
   // Inscreve em todos os tópicos já registados até ao momento
-  Object.keys(topicoHandlers).forEach(topico => subscreverTopico(topico));
+  new Set([...Object.keys(topicoHandlers), ...Object.keys(topicoTextoHandlers)])
+    .forEach(topico => subscreverTopico(topico));
 });
 
 client.on('reconnect', () => atualizarStatus('connecting', 'Reconectando ao broker'));
@@ -44,9 +46,19 @@ export function registrarHandler(topico, handlerFn) {
   subscreverTopico(topico);
 }
 
+export function registrarTextoHandler(topico, handlerFn) {
+  if (!topicoTextoHandlers[topico]) {
+    topicoTextoHandlers[topico] = [];
+  }
+  topicoTextoHandlers[topico].push(handlerFn);
+  subscreverTopico(topico);
+}
+
 client.on('message', (topic, message) => {
   const payloadStr = message.toString();
   console.log(`📩 [MQTT RX Frontend] Mensagem recebida em [${topic}]:`, payloadStr);
+
+  topicoTextoHandlers[topic]?.forEach(fn => fn(payloadStr));
 
   if (topicoHandlers[topic]) {
     try {

@@ -6,7 +6,15 @@ export const CONFIG = {
     ALERTA: 'CARE/comunicacao/alerta',
     HISTORICO: 'CARE/historico',
     TAREFAS: 'CARE/rotina/tarefas',
-    CHECK: 'CARE/rotina/check'
+    CHECK: 'CARE/rotina/check',
+    CONFIG_PERGUNTAS: 'CARE/jogo/perguntas/config',
+    PERGUNTAS: 'CARE/jogo/perguntas',
+    FASE1: 'CARE/jogo/fase1',
+    FASE2_N1: 'CARE/jogo/fase2/nivel1',
+    FASE2_N2: 'CARE/jogo/fase2/nivel2',
+    FASE2_N3: 'CARE/jogo/fase2/nivel3',
+    FASE3: 'CARE/jogo/fase3',
+    VITORIA: 'CARE/jogo/vitoria'
   }
 };
 

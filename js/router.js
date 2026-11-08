@@ -1,6 +1,8 @@
 import './modules/historico.js?v=4';
 import './modules/comunicacao.js?v=7';
 import './modules/rotina.js?v=5';
+import './modules/perguntas.js?v=2';
+import './modules/jogo.js?v=1';
 function initRouter() {
   const siteHeader = document.querySelector('.site-header');
   const menuToggle = document.querySelector('.menu-toggle');

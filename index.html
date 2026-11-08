@@ -28,6 +28,8 @@
       <button class="tab-btn active" data-tab="home" aria-current="page">Home</button>
       <button class="tab-btn" data-tab="rotina">Rotina</button>
       <button class="tab-btn" data-tab="comunicacao">Fala</button>
+      <button class="tab-btn" data-tab="perguntas">Perguntas</button>
+      <button class="tab-btn" data-tab="jogo">Jogar</button>
       <button class="tab-btn" data-tab="historico">Histórico</button>
     </nav>
     <button class="nav-backdrop" type="button" aria-label="Fechar menu" tabindex="-1"></button>
@@ -108,6 +110,38 @@
         </tbody>
       </table>
       <div id="tx-log" class="log-message" role="status"></div>
+    </div>
+  </section>
+
+  <!-- ABA: PERGUNTAS -->
+  <section id="aba-perguntas" class="tab-content">
+    <div class="card">
+      <h2>Configuração das perguntas</h2>
+      <table class="task-status-table question-table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Pergunta</th>
+            <th scope="col">Alternativa A</th>
+            <th scope="col">Alternativa B</th>
+            <th scope="col">Certa</th>
+            <th scope="col">Ação</th>
+          </tr>
+        </thead>
+        <tbody id="question-config">
+          <tr><td colspan="6">Carregando configuração...</td></tr>
+        </tbody>
+      </table>
+      <div id="question-tx-log" class="log-message" role="status"></div>
+    </div>
+  </section>
+
+  <!-- ABA: JOGOS -->
+  <section id="aba-jogo" class="tab-content">
+    <div class="card game-card">
+      <div id="game-message" class="game-message" role="status" aria-live="polite">
+        Aguardando início do jogo...
+      </div>
     </div>
   </section>
 
