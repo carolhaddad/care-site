@@ -10,6 +10,7 @@ registrarHandler(CONFIG.TOPICS.HISTORICO, (data) => {
   const elAcessos = document.getElementById('hist-acessos');
   const elTempo   = document.getElementById('hist-tempo');
   const elBotoes  = document.getElementById('hist-botoes');
+  const elVitorias = document.getElementById('hist-vitorias');
 
   // 1. Usos por Modo
   if (elAcessos && Array.isArray(data.vezes_modo)) {
@@ -30,5 +31,10 @@ registrarHandler(CONFIG.TOPICS.HISTORICO, (data) => {
     elBotoes.innerHTML = Object.entries(data.palavras)
       .map(([palavra, qtd]) => `<b>${palavra.toUpperCase()}:</b> ${qtd}x`)
       .join('<br>');
+  }
+
+  // 4. Vitórias
+  if (elVitorias && Number.isFinite(data.vitorias)) {
+    elVitorias.textContent = `${data.vitorias}`;
   }
 });
