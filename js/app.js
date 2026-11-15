@@ -1,0 +1,25 @@
+import { initializeApp } from './core.js';
+import './views/home.js';
+import './views/comunicacao.js';
+import './views/perguntas.js';
+import './views/jogo.js';
+import './views/rotina.js';
+import './views/historico.js';
+import './views/historias.js';
+import './views/editor-historias.js';
+import './views/leitura-historias.js';
+import './modules/historias.js';
+import './views/informacoes.js';
+import './views/acessibilidade.js';
+import { renderizarBotoes } from './modules/comunicacao.js';
+import { renderizarPerguntas } from './modules/perguntas.js';
+import { renderizarStatusTarefas } from './modules/rotina.js';
+import { renderizarHistorico } from './modules/historico.js';
+import { renderizarJogo } from './modules/jogo.js';
+
+initializeApp();
+renderizarBotoes();
+renderizarPerguntas();
+renderizarStatusTarefas();
+renderizarHistorico();
+renderizarJogo();
