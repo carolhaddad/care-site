@@ -43,14 +43,14 @@ const NAV = [
 const TIT = {
   home: [
     "Olá, bem-vindo ao CARE",
-    "Um espaço seguro para comunicar, aprender e crescer.",
+    "Um espaço seguro para comunicar, aprender, brincar e se desenvolver.",
   ],
   speech: [
     "Comunicação CAA",
     "Personalize as palavras dos sete botões físicos.",
   ],
   questions: ["Perguntas do quiz", "Configure as perguntas da fase 3 do jogo."],
-  game: ["Jogo das cores", "Observe, repita e celebre cada conquista."],
+  game: ["Jogo cooperativo", "Observe, repita e celebre cada conquista."],
   routine: ["Rotina diária", "Passos claros tornam o dia mais tranquilo."],
   history: [
     "Histórico e progresso",
@@ -63,7 +63,7 @@ const TIT = {
     "Informações sobre o TEA",
     "Informações confiáveis e caminhos de apoio sobre o autismo, no seu ritmo.",
   ],
-  settings: ["Acessibilidade", "Adapte o CARE para ficar confortável."],
+  settings: ["Acessibilidade", "Adapte o site para ficar confortável."],
 };
 const DECO = {
   dino: "🦖🦕🌿🥚🌋🦴",
@@ -84,7 +84,7 @@ const MODES = [
     "speech",
     "blue",
   ],
-  ["Arte", "spark", "Crie livremente com cores e formas.", null, "yellow"],
+  ["Arte", "spark", "Crie livremente com cores e notas.", null, "yellow"],
   ["Jogo", "game", "Aprenda brincando, sem perder.", "game", "green"],
   [
     "Rotina",
@@ -113,7 +113,7 @@ let S = {
     { n: "Prof. Carlos", r: 5, t: "Os alunos adoram o jogo sem punição." },
     {
       n: "Ana, terapeuta ocupacional",
-      r: 4,
+      r: 5,
       t: "CAA fácil de personalizar. Quero mais temas!",
     },
   ],

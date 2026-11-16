@@ -28,7 +28,7 @@ V.home = function home() {
   return `<div class="card">
     <span class="eb">7 em 1</span>
     <h2>Um recurso para cada momento</h2>
-    <p class="sub">Escolha o que faz sentido agora.</p>
+    <p class="sub">Tudo em um só lugar.</p>
     <div class="grid g4">
       ${MODES.map(
         (m) => `
@@ -127,9 +127,9 @@ V.home = function home() {
     <span class="eb">Para quem cuida</span>
     <h2>Guia rápido para cuidadores</h2>
     <div class="grid g3">
-      <p>🌬️ <b>Respirem juntos:</b> inspire 4s, segure 2s e solte em 6s.</p>
+      <p>🌬️ <b>Respirem juntos:</b> inspire 4s, segure 4s, solte em 4s e segure mais 4s.</p>
       <p>💬 <b>Personalize a CAA</b> com palavras familiares.</p>
-      <p>🔅 <b>Respeite o sensorial:</b> reduza brilho e sons ao notar cansaço.</p>
+      <p>🔅 <b>Respeite o sensorial:</b> remova brilho e sons ao notar cansaço.</p>
     </div>
   </div>`;
 };
