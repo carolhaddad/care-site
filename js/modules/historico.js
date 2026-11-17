@@ -3,7 +3,7 @@ import { CONFIG } from '../config.js';
 
 const MODOS = ['Crise', 'Fala', 'Arte', 'Jogo', 'Rotina', 'História', 'Histórico'];
 const ICONES_MODOS = ['🛡️', '💬', '🎨', '🎮', '📋', '📖', '📊'];
-const CORES = ['var(--rd)', 'var(--bl)', 'var(--ye)', 'var(--gr)', '#8a6bd1', '#e08a3c', '#2aa79b'];
+const CORES = ['var(--rd)', 'var(--ye)', 'var(--gr)', 'var(--bl)', '#00bcd4', '#8a6bd1', '#fff'];
 let historico = null;
 
 function formatarTempo(minutos) {
