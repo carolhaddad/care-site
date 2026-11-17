@@ -11,6 +11,8 @@ export const CONFIG = {
     CONFIG_PERGUNTAS: 'CARE/jogo/perguntas/config',
     PERGUNTAS: 'CARE/jogo/perguntas',
     HISTORIAS_NODOS: 'CARE/historias/config',
+    HISTORIAS_CAPA: 'CARE/historias/capa',
+    HISTORIAS_NOME: 'CARE/historias/nome',
     HISTORIAS_CONFIGURAR: 'CARE/historias/configurar',
     HISTORIA_NO_ATUAL: 'CARE/historias/no_atual',
     FASE1: 'CARE/jogo/fase1',

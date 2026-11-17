@@ -45,6 +45,31 @@ V.editor = function editor() {
       <span class="eb">Nó #${S.node - 1}</span>
       <h2>Cena atual</h2>
       <p class="sub">Edite o texto e defina para onde cada escolha leva.</p>
+      <div class="fl">
+        <span>Nome da história <small>Até 60 caracteres</small></span>
+        <input aria-label="Nome da história" value="${escapeHtml(st.t)}" maxlength="60" oninput="st().t=this.value">
+        <button class="btn ghost full" onclick="salvarNomeHistoria()">Salvar nome</button>
+        <p id="story-name-status" class="sub" role="status" aria-live="polite">Salve o nome para sincronizar com outros dispositivos.</p>
+      </div>
+      <div class="fl story-cover-editor">
+        <span>Capa da história <small>PNG ou JPG · até 5 MB</small></span>
+        <div class="story-cover-preview">
+          ${st.capa
+            ? `<img src="${escapeHtml(st.capa)}" alt="Capa de ${escapeHtml(st.t)}">`
+            : `<span aria-hidden="true">${escapeHtml(st.e)}</span>`}
+        </div>
+        <label class="up">
+          ${ic("edit")}
+          <div>
+            <b>${st.capa ? "Trocar capa" : "Adicionar capa"}</b>
+            <small>A capa aparece na lista de histórias</small>
+          </div>
+          <span class="btn ghost sm">Escolher</span>
+          <input type="file" accept="image/png,image/jpeg" hidden onchange="setCapa(this)">
+        </label>
+        <button class="btn ghost full" onclick="salvarCapa()">Salvar capa</button>
+        <p id="story-cover-status" class="sub" role="status" aria-live="polite">Salve a capa para sincronizar com outros dispositivos.</p>
+      </div>
       <label class="fl">
         <span>Texto curto da FPGA <small>Obrigatório · até 16 caracteres</small></span>
         <input value="${escapeHtml(n.textoCurto)}" maxlength="16" oninput="st().n[S.node].textoCurto=this.value;drawG()">
@@ -76,7 +101,7 @@ V.editor = function editor() {
     </section>
     <aside class="smap">
       <div class="mh">
-        <div><span class="eb">Mapa da história</span><h2>${st.t}</h2></div>
+        <div><span class="eb">Mapa da história</span><h2>${escapeHtml(st.t)}</h2></div>
         <div class="mh-actions">
           <button class="rb danger" onclick="deletarNo()" aria-label="Excluir nó" ${S.node === 1 ? 'disabled title="O nó inicial não pode ser excluído"' : ""}>🗑</button>
           <button class="rb" onclick="addNode()" aria-label="Adicionar novo nó">+</button>

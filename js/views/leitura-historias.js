@@ -34,7 +34,9 @@ V.read = function read() {
     : `<button class="btn" onclick="S.rd=0;render()">Finalizar história</button>`;
   return `<div class="card">
     <p class="sub">${escapeHtml(st.t)} · Cena ${cena}</p>
-    <div class="scene" ${n.img ? `style="background:url('${n.img}') center/cover"` : ""}>${n.img ? "" : st.e}</div>
+    <div class="scene${n.img ? " scene-with-image" : ""}">${n.img
+      ? `<img class="scene-image" src="${escapeHtml(n.img)}" alt="">`
+      : st.e}</div>
     <p class="narr">${escapeHtml(texto)}</p>
     ${escolhas}
     <button class="btn ghost sm" style="margin-top:14px" onclick="S.fromEd?nav('editor'):nav('stories')">← Voltar</button>

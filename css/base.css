@@ -392,6 +392,7 @@ td {
 .stories {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  align-items: start;
   gap: 16px;
 }
 .scard {
@@ -413,14 +414,51 @@ td {
   font-style: normal;
   font-size: 3rem;
 }
+.scard-cover {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+.story-cover-preview {
+  border-radius: 16px;
+  background: var(--sf2);
+  display: grid;
+  place-items: center;
+  font-size: 4rem;
+}
+.story-cover-preview img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.story-cover-editor .up {
+  margin-top: 10px;
+}
+.story-cover-editor > button {
+  margin-top: 10px;
+}
 .scene {
-  height: 200px;
+  min-height: 200px;
   border-radius: 20px;
   background: linear-gradient(var(--prl), var(--sf2));
   display: grid;
   place-items: center;
   font-size: 5rem;
   margin-bottom: 14px;
+}
+.scene-with-image {
+  min-height: 0;
+  background: none;
+  display: block;
+  font-size: initial;
+}
+.scene-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 20px;
 }
 .narr {
   font-size: 1.3rem;

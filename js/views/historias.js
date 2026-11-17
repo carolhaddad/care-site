@@ -1,4 +1,4 @@
-import { V, S, ic, nav, MODES, stars, MANUAL_URL } from "../core.js";
+import { V, S, ic, nav, MODES, stars, MANUAL_URL, escapeHtml } from "../core.js";
 S.stTab = "edit";
 
 V.stories = function stories() {
@@ -12,8 +12,10 @@ V.stories = function stories() {
     <div class="stories">
       ${S.stories.map((x, i) => `
         <button class="scard" onclick="S.cur=${i};S.node=1;S.rd=1;S.fromEd=false;nav('${rd ? "read" : "editor"}')">
-          <i>${x.e}</i>
-          <h3>${x.t}</h3>
+          ${x.capa
+            ? `<img class="scard-cover" src="${escapeHtml(x.capa)}" alt="">`
+            : `<i>${x.e}</i>`}
+          <h3>${escapeHtml(x.t)}</h3>
           <small>${Object.keys(x.n).length} cenas</small>
         </button>
       `).join("")}

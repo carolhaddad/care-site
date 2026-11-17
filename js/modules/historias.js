@@ -9,13 +9,21 @@ const HISTORIAS_PADRAO = [
     n: {
       1: {
         t: 'EU VOU COMER',
+        textoCurto: 'EU VOU COMER',
+        textoLongo: 'Eu vou comer',
+        img: 'assets/historias/maos-limpas-01.png',
         a: 'COMER',
+        aLong: 'Comer agora',
         b: 'LAVAR',
+        bLong: 'Lavar as mãos',
         at: 3,
         bt: 2
       },
       2: {
         t: 'MÃOS FICAM LIMPAS',
+        textoCurto: 'MÃOS LIMPAS',
+        textoLongo: 'Eu lavo minhas mãos. Minhas mãos ficam limpas',
+        img: 'assets/historias/maos-limpas-02.png',
         mostrarA: false,
         mostrarB: false,
         at: 0,
@@ -23,13 +31,21 @@ const HISTORIAS_PADRAO = [
       },
       3: {
         t: 'MÃOS SUJAS?',
+        textoCurto: 'MÃOS SUJAS?',
+        textoLongo: 'Minhas mãos podem estar sujas',
+        img: 'assets/historias/maos-limpas-03.png',
         a: 'SEGUE',
+        aLong: 'Continuar',
         b: 'LAVAR',
+        bLong: 'Lavar agora',
         at: 4,
         bt: 2
       },
       4: {
         t: 'A SUJEIRA VAI PARA A COMIDA',
+        textoCurto: 'COMIDA SUJA',
+        textoLongo: 'A sujeira vai para a minha comida',
+        img: 'assets/historias/maos-limpas-04.png',
         mostrarA: false,
         mostrarB: false,
         at: 0,
@@ -43,13 +59,21 @@ const HISTORIAS_PADRAO = [
     n: {
       1: {
         t: 'MUITO BARULHO',
+        textoCurto: 'MUITO BARULHO',
+        textoLongo: 'Tem muito barulho aqui',
+        img: 'assets/historias/muito-barulho-01.png',
         a: 'FONE',
-        b: 'GRITAR',
+        aLong: 'Colocar um fone',
+        b: 'GRITA',
+        bLong: 'Gritar',
         at: 3,
         bt: 2
       },
       2: {
         t: 'EU GRITO BARULHO AUMENTA',
+        textoCurto: 'BARULHO AUMENTA',
+        textoLongo: 'Eu grito. O barulho aumenta.',
+        img: 'assets/historias/muito-barulho-02.png',
         mostrarA: false,
         mostrarB: false,
         at: 0,
@@ -57,6 +81,9 @@ const HISTORIAS_PADRAO = [
       },
       3: {
         t: 'EU USO UM FONE MAIS CONFORTÁVEL',
+        textoCurto: 'MAIS CONFORTAVEL',
+        textoLongo: 'Eu uso um fone. Fica mais confortável',
+        img: 'assets/historias/muito-barulho-03.png',
         mostrarA: false,
         mostrarB: false,
         at: 0,
@@ -70,27 +97,43 @@ const HISTORIAS_PADRAO = [
     n: {
       1: {
         t: 'TENHO UMA TAREFA',
+        textoCurto: 'TENHO UMA TAREFA',
+        textoLongo: 'Eu tenho uma tarefa para fazer',
+        img: 'assets/historias/uma-tarefa-01.png',
         a: 'AJUDA',
-        b: 'TENTAR',
+        aLong: 'Pedir ajuda',
+        b: 'TENTA',
+        bLong: 'Tentar sozinho',
         at: 3,
         bt: 2
       },
       2: {
         t: 'EU TENTO SOZINHO',
-        a: 'CONTINUAR',
+        textoCurto: 'EU TENTO SOZINHO',
+        textoLongo: 'Eu tento sozinho',
+        img: 'assets/historias/uma-tarefa-02.png',
+        a: 'SIM',
+        aLong: 'Continuar',
         mostrarB: false,
         at: 4,
         bt: 0
       },
       3: {
         t: 'PEÇO AJUDA',
-        a: 'CONTINUAR',
+        textoCurto: 'PEÇO AJUDA',
+        textoLongo: 'Eu peço ajuda',
+        img: 'assets/historias/uma-tarefa-03.png',
+        a: 'SIM',
+        aLong: 'Continuar',
         mostrarB: false,
         at: 4,
         bt: 0
       },
       4: {
         t: 'CONSEGUI!',
+        textoCurto: 'EU CONSEGUI!',
+        textoLongo: 'Eu consegui',
+        img: 'assets/historias/uma-tarefa-04.png',
         mostrarA: false,
         mostrarB: false,
         at: 0,
@@ -104,13 +147,21 @@ const HISTORIAS_PADRAO = [
     n: {
       1: {
         t: 'BALANÇO OCUPADO',
+        textoCurto: 'BALANÇO OCUPADO',
+        textoLongo: 'Eu quero ir no balanço. Tem alguém lá',
+        img: 'assets/historias/balanco-ocupado-01.png',
         a: 'IR',
-        b: 'DESISTIR',
+        aLong: 'Chegar perto',
+        b: 'SAIR',
+        bLong: 'Desistir',
         at: 3,
         bt: 2
       },
       2: {
         t: 'EU NÃO BRINCO',
+        textoCurto: 'EU NÃO BRINCO',
+        textoLongo: 'Eu desisto. Eu não brinco',
+        img: 'assets/historias/balanco-ocupado-02.png',
         mostrarA: false,
         mostrarB: false,
         at: 0,
@@ -118,13 +169,21 @@ const HISTORIAS_PADRAO = [
       },
       3: {
         t: 'EU CHEGO PERTO',
+        textoCurto: 'EU CHEGO PERTO',
+        textoLongo: 'Eu chego perto',
+        img: 'assets/historias/balanco-ocupado-03.png',
         a: 'PEÇO',
-        b: 'ENCARO',
+        aLong: 'Perguntar se posso ir depois',
+        b: 'OLHO',
+        bLong: 'Encarar',
         at: 5,
         bt: 4
       },
       4: {
         t: 'EU ENCARO ELE NÃO ENTENDE',
+        textoCurto: 'ELE NAO ENTENDE',
+        textoLongo: 'Eu encaro. A criança não sabe o que eu quero',
+        img: 'assets/historias/balanco-ocupado-04.png',
         mostrarA: false,
         mostrarB: false,
         at: 0,
@@ -132,6 +191,9 @@ const HISTORIAS_PADRAO = [
       },
       5: {
         t: 'POSSO IR DEPOIS? E BRINCO DEPOIS',
+        textoCurto: 'BRINCO DEPOIS',
+        textoLongo: 'Eu pergunto: “Posso ir depois?”. E brinco depois',
+        img: 'assets/historias/balanco-ocupado-05.png',
         mostrarA: false,
         mostrarB: false,
         at: 0,
@@ -143,6 +205,7 @@ const HISTORIAS_PADRAO = [
 const HISTORIAS = HISTORIAS_PADRAO.length;
 const NOS_POR_HISTORIA = 8;
 const TAMANHO_LINHA = 16;
+const LIMITE_NOME_HISTORIA = 60;
 const salvando = new Set();
 
 function limitarTexto(texto, limite) {
@@ -187,6 +250,14 @@ function topicoDoNo(historiaIndex, noIndex) {
   return `${CONFIG.TOPICS.HISTORIAS_NODOS}/${historiaIndex + 1}/${noIndex}`;
 }
 
+function topicoDaCapa(historiaIndex) {
+  return `${CONFIG.TOPICS.HISTORIAS_CAPA}/${historiaIndex + 1}`;
+}
+
+function topicoDoNome(historiaIndex) {
+  return `${CONFIG.TOPICS.HISTORIAS_NOME}/${historiaIndex + 1}`;
+}
+
 function linhaFpga(texto) {
   const ascii = String(texto || '')
     .normalize('NFD')
@@ -206,6 +277,110 @@ function destinoGlobal(historiaIndex, destinoLocal) {
 function configurarStatus(mensagem) {
   const status = document.getElementById('story-save-status');
   if (status) status.textContent = mensagem;
+}
+
+function configurarStatusCapa(mensagem) {
+  const status = document.getElementById('story-cover-status');
+  if (status) status.textContent = mensagem;
+}
+
+function configurarStatusNome(mensagem) {
+  const status = document.getElementById('story-name-status');
+  if (status) status.textContent = mensagem;
+}
+
+function salvarNomeHistoria() {
+  const historiaIndex = S.cur;
+  const historia = S.stories[historiaIndex];
+  if (!historia) return;
+
+  const nome = String(historia.t || '').trim();
+  if (!nome) {
+    configurarStatusNome('Informe um nome para a história.');
+    return;
+  }
+  if (Array.from(nome).length > LIMITE_NOME_HISTORIA) {
+    configurarStatusNome(`O nome deve ter até ${LIMITE_NOME_HISTORIA} caracteres.`);
+    return;
+  }
+
+  historia.t = nome;
+  render();
+  if (!client.connected) {
+    configurarStatusNome('Conecte-se ao MQTT para sincronizar o nome.');
+    return;
+  }
+
+  configurarStatusNome('Salvando nome no MQTT...');
+  publicarRetido(
+    topicoDoNome(historiaIndex),
+    JSON.stringify({ historia: historiaIndex + 1, nome })
+  ).then(
+    () => configurarStatusNome('Nome salvo e sincronizado com outros dispositivos.'),
+    (erro) => {
+      console.error('Erro ao salvar nome da história no MQTT:', erro);
+      configurarStatusNome('Não foi possível salvar o nome no MQTT.');
+    }
+  );
+}
+
+function setCapa(input) {
+  const arquivo = input.files[0];
+  if (!arquivo) return;
+  if (!['image/png', 'image/jpeg'].includes(arquivo.type)) {
+    alert('Escolha uma imagem PNG ou JPG.');
+    input.value = '';
+    return;
+  }
+  if (arquivo.size > 5 * 1024 * 1024) {
+    alert('A imagem da capa deve ter até 5 MB.');
+    input.value = '';
+    return;
+  }
+
+  const historiaIndex = S.cur;
+  const leitor = new FileReader();
+  leitor.onload = () => {
+    if (typeof leitor.result !== 'string' ||
+        !/^data:image\/(?:png|jpeg);base64,[A-Za-z0-9+/]*={0,2}$/i.test(leitor.result)) {
+      configurarStatusCapa('Não foi possível carregar esta imagem.');
+      return;
+    }
+    S.stories[historiaIndex].capa = leitor.result;
+    render();
+    configurarStatusCapa('Prévia atualizada. Salve a capa para sincronizar com outros dispositivos.');
+  };
+  leitor.onerror = () => {
+    console.error('Erro ao carregar imagem da capa:', leitor.error);
+    configurarStatusCapa('Não foi possível carregar esta imagem.');
+  };
+  leitor.readAsDataURL(arquivo);
+}
+
+function salvarCapa() {
+  const historiaIndex = S.cur;
+  const historia = S.stories[historiaIndex];
+  if (!historia || typeof historia.capa !== 'string' ||
+      !/^data:image\/(?:png|jpeg);base64,[A-Za-z0-9+/]*={0,2}$/i.test(historia.capa)) {
+    configurarStatusCapa('Escolha uma imagem PNG ou JPG para a capa.');
+    return;
+  }
+  if (!client.connected) {
+    configurarStatusCapa('Conecte-se ao MQTT para sincronizar a capa.');
+    return;
+  }
+
+  configurarStatusCapa('Salvando capa no MQTT...');
+  publicarRetido(
+    topicoDaCapa(historiaIndex),
+    JSON.stringify({ historia: historiaIndex + 1, imagem: historia.capa })
+  ).then(
+    () => configurarStatusCapa('Capa salva e sincronizada com outros dispositivos.'),
+    (erro) => {
+      console.error('Erro ao salvar capa da história no MQTT:', erro);
+      configurarStatusCapa('Não foi possível salvar a capa no MQTT.');
+    }
+  );
 }
 
 function definirAlternativa(botao, visivel) {
@@ -476,6 +651,10 @@ function validarNoRecebido(dados, historiaIndex, noIndex) {
   const inicioHistoria = historiaIndex * NOS_POR_HISTORIA;
   const destinoValido = (destino) =>
     destino === 0 || (destino >= inicioHistoria && destino < inicioHistoria + NOS_POR_HISTORIA);
+  const imagemValida = (imagem) =>
+    !imagem ||
+    /^data:image\/(?:png|jpeg);base64,[A-Za-z0-9+/]*={0,2}$/i.test(imagem) ||
+    /^assets\/[A-Za-z0-9_-]+(?:\/[A-Za-z0-9_-]+)*\.(?:png|jpe?g)$/i.test(imagem);
   return dados &&
     dados.historia === historiaIndex + 1 &&
     dados.no === noIndex &&
@@ -500,10 +679,33 @@ function validarNoRecebido(dados, historiaIndex, noIndex) {
     Number.isInteger(dados.destino_a) && destinoValido(dados.destino_a) &&
     Number.isInteger(dados.destino_b) && destinoValido(dados.destino_b) &&
     typeof dados.imagem === 'string' &&
-    (!dados.imagem || /^data:image\/(?:png|jpeg);base64,[A-Za-z0-9+/]*={0,2}$/i.test(dados.imagem));
+    imagemValida(dados.imagem);
 }
 
 for (let historiaIndex = 0; historiaIndex < HISTORIAS; historiaIndex++) {
+  registrarHandler(topicoDoNome(historiaIndex), (dados) => {
+    const nome = typeof dados?.nome === 'string' ? dados.nome.trim() : '';
+    if (!dados || dados.historia !== historiaIndex + 1 || !nome ||
+        Array.from(nome).length > LIMITE_NOME_HISTORIA) {
+      console.error('Dados inválidos de nome de história recebidos:', dados);
+      return;
+    }
+    S.stories[historiaIndex].t = nome;
+    if (S.page === 'stories' || S.page === 'editor' || S.page === 'read') render();
+  });
+
+  registrarHandler(topicoDaCapa(historiaIndex), (dados) => {
+    const imagemValida = typeof dados?.imagem === 'string' &&
+      (!dados.imagem ||
+       /^data:image\/(?:png|jpeg);base64,[A-Za-z0-9+/]*={0,2}$/i.test(dados.imagem));
+    if (!dados || dados.historia !== historiaIndex + 1 || !imagemValida) {
+      console.error('Dados inválidos de capa de história recebidos:', dados);
+      return;
+    }
+    S.stories[historiaIndex].capa = dados.imagem;
+    if (S.page === 'stories' || S.page === 'editor') render();
+  });
+
   for (let noIndex = 0; noIndex < NOS_POR_HISTORIA; noIndex++) {
     registrarHandler(topicoDoNo(historiaIndex, noIndex), (dados) => {
       if (dados && dados.removido === true) {
@@ -556,6 +758,13 @@ registrarHandler(CONFIG.TOPICS.HISTORIA_NO_ATUAL, (dados) => {
   nav('read');
 });
 
-Object.assign(window, { salvarCena, deletarNo, definirAlternativa });
+Object.assign(window, {
+  salvarCena,
+  deletarNo,
+  definirAlternativa,
+  setCapa,
+  salvarCapa,
+  salvarNomeHistoria
+});
 
-export { salvarCena, deletarNo, definirAlternativa };
+export { salvarCena, deletarNo, definirAlternativa, setCapa, salvarCapa, salvarNomeHistoria };
